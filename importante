@@ -1,0 +1,48 @@
+full stack dev:
+front-end dev: HTML5 CSS3 JAVASCRIPT + REACT
+Back End Dev: Node Server Node.js Express.js   Database: PostGresql MongoDB
+
+BackEnd Dev: Node server: Node.js Esxpress.js  
+Database: PostGresql (SQL) MongoDB (MongoDB query language)
+foreign key -> primary key : relational databases  PostGresql
+DBMS 
+ NoSQL/ non relational databases
+ Rlational db: users.txt tweets.txt profile.txt
+ non relational Db(mongo db): user1.txt user2.txt
+ psql -U postgres
+ \c test
+ \du
+ UPDATE appusers SET score = 50 WHERE name='John' OR name= 'Sally';
+ SELECT SUM(age) FROM appusers;
+
+ CREATE TABLE login (
+     ID serial NOT NULL PRIMARY KEY,
+     secret VARCHAR (100) NOT NULL,
+     name text UNIQUE NOT NULL
+ );
+
+ INSERT INTO login (secret,name) VALUES ('lol', 'John');
+
+ SELECT * FROM appusers JOIN login ON appusers.name = login.name;
+
+ to delete stuff with SQL
+ DELETE from appusers WHERE name = 'Sally';
+ SELECT * FROM appusers;
+ DROP TABLE login;
+ \d
+ \q
+
+
+ CREATE TABLE users (
+     id serial PRIMARY KEY,
+     name VARCHAR(100),
+     email text UNIQUE NOT NULL, 
+     entries BIGINT DEFAULT 0,
+     joined TIMESTAMP NOT NULL
+ );
+
+ CREATE TABLE login (
+     id serial PRIMARY KEY,
+     hash varchar(100) NOT NULL,
+     email text UNIQUE NOT NULL
+ );
